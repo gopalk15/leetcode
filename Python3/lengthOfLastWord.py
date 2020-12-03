@@ -6,8 +6,15 @@ A word is a maximal substring consisting of non-space characters only.
 
 class Solution:
     def lengthOfLastWord(self, s: str) -> int:
-        words = s.split(' ')
-        return len(words[-1])
-    
-
+        #Clean up string 
+        s_clean = s.strip()
+        length:int = 0
         
+        for i in range(1,(len(s_clean)+1)):
+            if s_clean[-i] == ' ':
+                break
+            else:
+                length += 1
+                continue
+        
+        return length 
